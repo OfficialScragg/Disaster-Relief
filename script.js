@@ -66,6 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  var homeLink = document.getElementById('home-link');
+  if (homeLink) {
+    homeLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+
 // Contact Form Handling
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
@@ -97,28 +107,6 @@ if (contactForm) {
         this.reset();
     });
 }
-
-// Donation Button Handling
-const donationButtons = document.querySelectorAll('.donation-buttons .btn');
-donationButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        const amount = this.textContent.includes('$') ? 
-            this.textContent.match(/\$(\d+)/)[1] : 
-            'custom';
-        
-        if (amount === 'custom') {
-            const customAmount = prompt('Enter your donation amount:');
-            if (customAmount && !isNaN(customAmount) && customAmount > 0) {
-                showNotification(`Thank you for your $${customAmount} donation! Redirecting to payment...`, 'success');
-                // Here you would typically redirect to a payment processor
-            }
-        } else {
-            showNotification(`Thank you for your $${amount} donation! Redirecting to payment...`, 'success');
-            // Here you would typically redirect to a payment processor
-        }
-    });
-});
 
 // Notification System
 function showNotification(message, type = 'info') {

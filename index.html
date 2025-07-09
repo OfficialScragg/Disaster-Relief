@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lifeline Global - Disaster Relief & Crisis Response</title>
+    <title>Lifeline Global - Maritime Disaster Relief & Coastal Support</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="ship.png">
 </head>
 <body>
     <!-- Header -->
@@ -14,15 +15,15 @@
         <nav class="nav">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-ship"></i>
                     <span>Lifeline Global</span>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link" id="home-link">Home</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#services" class="nav-link">Our Work</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><a href="#donate" class="nav-link donate-btn">Donate Now</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="donations.html" class="nav-link donate-btn">Donate Now</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -37,28 +38,25 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Bringing Hope to Crisis-Affected Communities</h1>
+                <h1 class="hero-title">Bringing Hope to Coastal Communities</h1>
                 <p class="hero-subtitle">
-                    When disaster strikes the world's most vulnerable populations, Lifeline Global responds with 
-                    immediate relief, long-term support, and the resources needed to rebuild lives.
+                    Lifeline Global operates a humanitarian relief vessel that patrols the coasts of Africa, 
+                    providing immediate aid, food, and support to communities devastated by natural disasters 
+                    and maritime emergencies.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#donate" class="btn btn-primary">Donate Now</a>
+                    <a href="donations.html" class="btn btn-primary">Donate Now</a>
                     <a href="#about" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
             <div class="hero-stats">
                 <div class="stat">
-                    <div class="stat-number">2.3M+</div>
+                    <div class="stat-number">500K+</div>
                     <div class="stat-label">Lives Impacted</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">850+</div>
-                    <div class="stat-label">Relief Operations</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">45</div>
-                    <div class="stat-label">Countries Served</div>
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Relief Missions</div>
                 </div>
             </div>
         </div>
@@ -69,29 +67,31 @@
         <div class="container">
             <div class="section-header">
                 <h2>Our Mission</h2>
-                <p>Providing rapid response and sustainable support to communities devastated by natural disasters</p>
+                <p>Providing maritime-based disaster relief and sustainable support to coastal communities across Africa</p>
             </div>
             <div class="about-grid">
                 <div class="about-content">
                     <h3>Who We Are</h3>
                     <p>
-                        Lifeline Global is a humanitarian organization dedicated to providing immediate crisis relief 
-                        and long-term recovery support to communities affected by natural disasters. We focus on 
-                        underserved areas where flooding, earthquakes, hurricanes, and other disasters have the 
-                        most devastating impact on vulnerable populations.
+                        Lifeline Global is a specialized humanitarian organization dedicated to providing 
+                        maritime-based disaster relief and emergency response to coastal communities across Africa. 
+                        Under the leadership of Managing Director Michael Taylor, we operate a state-of-the-art 
+                        humanitarian relief vessel that serves as our primary platform for delivering aid.
                     </p>
                     <p>
-                        Our team of experienced relief workers, medical professionals, and logistics experts work 
-                        around the clock to ensure that aid reaches those who need it most, when they need it most.
+                        Our vessel patrols the African coastline, responding to natural disasters, maritime emergencies, 
+                        and humanitarian crises. We focus on remote coastal communities that are often inaccessible 
+                        by traditional land-based relief efforts, ensuring that no community is left behind when 
+                        disaster strikes.
                     </p>
                     <div class="about-features">
                         <div class="feature">
-                            <i class="fas fa-bolt"></i>
-                            <span>Rapid Response</span>
+                            <i class="fas fa-ship"></i>
+                            <span>Maritime Operations</span>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-globe"></i>
-                            <span>Global Reach</span>
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Coastal Reach</span>
                         </div>
                         <div class="feature">
                             <i class="fas fa-hands-helping"></i>
@@ -100,10 +100,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-users"></i>
-                        <p>Relief workers providing aid in flood-affected communities</p>
-                    </div>
+                    <img src="vessel.jpeg" alt="Lineline Global Humanitarian Relief Vessel" class="vessel-image" />
                 </div>
             </div>
         </div>
@@ -114,50 +111,50 @@
         <div class="container">
             <div class="section-header">
                 <h2>How We Help</h2>
-                <p>Comprehensive disaster relief services tailored to each community's unique needs</p>
+                <p>Comprehensive maritime disaster relief services for coastal communities in crisis</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-tint"></i>
+                        <i class="fas fa-water"></i>
                     </div>
-                    <h3>Flood Relief</h3>
-                    <p>Emergency evacuation, clean water distribution, temporary shelter, and flood recovery assistance for affected families.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-medkit"></i>
-                    </div>
-                    <h3>Medical Aid</h3>
-                    <p>Mobile medical units, emergency healthcare, vaccination programs, and medical supply distribution in crisis zones.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Shelter & Housing</h3>
-                    <p>Emergency shelters, temporary housing solutions, and long-term reconstruction support for displaced families.</p>
+                    <h3>Maritime Emergency Response</h3>
+                    <p>Rapid response to shipwrecks, maritime accidents, and coastal emergencies with specialized rescue and medical teams.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-utensils"></i>
                     </div>
-                    <h3>Food Security</h3>
-                    <p>Emergency food distribution, nutrition programs, and agricultural recovery support for sustainable food access.</p>
+                    <h3>Food & Water Distribution</h3>
+                    <p>Large-scale food and clean water distribution to coastal communities affected by disasters and food insecurity.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-medkit"></i>
+                    </div>
+                    <h3>Medical Aid & Healthcare</h3>
+                    <p>Mobile medical clinics, emergency healthcare, vaccination programs, and medical supply distribution in coastal areas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Shelter & Reconstruction</h3>
+                    <p>Emergency shelters, temporary housing, and coastal infrastructure reconstruction for disaster-affected communities.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>Education Support</h3>
-                    <p>Temporary learning spaces, school reconstruction, and educational material distribution to ensure children can continue learning.</p>
+                    <h3>Education & Training</h3>
+                    <p>Educational support, maritime safety training, and skills development programs for coastal communities.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-tools"></i>
                     </div>
-                    <h3>Infrastructure Rebuild</h3>
-                    <p>Community infrastructure restoration, clean water systems, and essential services reconstruction.</p>
+                    <h3>Infrastructure Support</h3>
+                    <p>Coastal infrastructure restoration, clean water systems, and essential services reconstruction for sustainable recovery.</p>
                 </div>
             </div>
         </div>
@@ -167,36 +164,32 @@
     <section id="donate" class="donation">
         <div class="container">
             <div class="donation-content">
-                <h2>Make a Difference Today</h2>
-                <p>Your contribution directly supports families in crisis and helps rebuild communities stronger than before.</p>
+                <h2>Support Our Maritime Mission</h2>
+                <p>Your contribution directly supports our vessel operations and helps us reach coastal communities in need.</p>
                 
                 <div class="donation-amounts">
-                    <div class="amount-card">
-                        <div class="amount">$25</div>
-                        <p>Provides clean water for a family for one month</p>
-                    </div>
-                    <div class="amount-card">
+                    <a href="donations.html" class="amount-card">
                         <div class="amount">$50</div>
-                        <p>Emergency food supplies for a family of five</p>
-                    </div>
-                    <div class="amount-card">
+                        <p>Provides emergency food supplies for a coastal family</p>
+                    </a>
+                    <a href="donations.html" class="amount-card">
                         <div class="amount">$100</div>
-                        <p>Emergency shelter materials for displaced families</p>
-                    </div>
-                    <div class="amount-card">
+                        <p>Medical supplies for our onboard clinic for one day</p>
+                    </a>
+                    <a href="donations.html" class="amount-card">
                         <div class="amount">$250</div>
-                        <p>Mobile medical clinic operation for one day</p>
-                    </div>
+                        <p>Fuel for one day of coastal patrol operations</p>
+                    </a>
                 </div>
 
                 <div class="donation-buttons">
-                    <button class="btn btn-primary btn-large">Donate $25</button>
-                    <button class="btn btn-primary btn-large">Donate $50</button>
-                    <button class="btn btn-primary btn-large">Donate $100</button>
-                    <button class="btn btn-outline btn-large">Custom Amount</button>
+                    <a href="donations.html" class="btn btn-primary btn-large">Donate $50</a>
+                    <a href="donations.html" class="btn btn-primary btn-large">Donate $100</a>
+                    <a href="donations.html" class="btn btn-primary btn-large">Donate $250</a>
+                    <a href="donations.html" class="btn btn-outline btn-large">Custom Amount</a>
                 </div>
 
-                <p class="donation-note">100% of donations go directly to relief efforts. Administrative costs are covered by separate funding.</p>
+                <p class="donation-note">100% of donations go directly to our maritime relief operations. Administrative costs are covered by separate funding.</p>
             </div>
         </div>
     </section>
@@ -214,21 +207,28 @@
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <strong>Email</strong>
-                                <p>info@lifelineglobal.org</p>
+                                <p>michael@Lifelineglobal.net</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <div>
                                 <strong>Phone</strong>
-                                <p>+1 (555) 123-4567</p>
+                                <p>+1 813 535 3694</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <strong>Address</strong>
-                                <p>123 Relief Way<br>Global City, GC 12345</p>
+                                <p>17 Shlomo Str<br>Matawa, 6436</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-user-tie"></i>
+                            <div>
+                                <strong>Managing Director</strong>
+                                <p>Michael Taylor</p>
                             </div>
                         </div>
                     </div>
@@ -248,6 +248,7 @@
                                 <option value="volunteer">Volunteer Opportunities</option>
                                 <option value="partnership">Partnership</option>
                                 <option value="media">Media Inquiry</option>
+                                <option value="careers">Career Opportunities</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
@@ -267,10 +268,10 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-ship"></i>
                         <span>Lifeline Global</span>
                     </div>
-                    <p>Bringing hope and relief to communities in crisis worldwide.</p>
+                    <p>Bringing hope and relief to coastal communities across Africa through maritime operations.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -284,15 +285,15 @@
                     <ul>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#services">Our Work</a></li>
-                        <li><a href="#donate">Donate</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="donations.html">Donate</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Get Involved</h4>
                     <ul>
-                        <li><a href="#">Volunteer</a></li>
+                        <li><a href="careers.html">Join Our Crew</a></li>
                         <li><a href="#">Partner with Us</a></li>
                         <li><a href="#">Corporate Sponsorship</a></li>
                         <li><a href="#">Newsletter</a></li>

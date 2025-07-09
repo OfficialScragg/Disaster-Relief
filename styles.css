@@ -7,6 +7,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -14,6 +15,8 @@ body {
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 /* Color Variables */
@@ -111,6 +114,14 @@ p {
     margin: 10px;
 }
 
+.btn-small {
+    padding: 15px 30px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    min-width: 120px;
+    margin: 10px;
+}
+
 /* Header */
 .header {
     position: fixed;
@@ -199,9 +210,10 @@ p {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 120px 0 80px;
-    min-height: 100vh;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-container {
@@ -212,7 +224,7 @@ p {
 
 .hero-content {
     max-width: 600px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .hero-title {
@@ -231,14 +243,14 @@ p {
 .hero-buttons {
     display: flex;
     gap: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .hero-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .stat {
@@ -264,6 +276,8 @@ p {
 /* Section Styles */
 section {
     padding: 80px 0;
+    position: relative;
+    z-index: 2;
 }
 
 .section-header {
@@ -284,6 +298,8 @@ section {
 /* About Section */
 .about {
     background: var(--background-light);
+    position: relative;
+    z-index: 2;
 }
 
 .about-grid {
@@ -349,6 +365,8 @@ section {
 /* Services Section */
 .services {
     background: var(--background-white);
+    position: relative;
+    z-index: 2;
 }
 
 .services-grid {
@@ -401,6 +419,8 @@ section {
 .donation {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: white;
+    position: relative;
+    z-index: 2;
 }
 
 .donation-content {
@@ -434,6 +454,8 @@ section {
     border-radius: 15px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    color: inherit;
 }
 
 .amount {
@@ -461,6 +483,8 @@ section {
 /* Contact Section */
 .contact {
     background: var(--background-light);
+    position: relative;
+    z-index: 2;
 }
 
 .contact-grid {
@@ -545,6 +569,8 @@ section {
     background: var(--text-primary);
     color: white;
     padding: 60px 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-content {
@@ -664,6 +690,10 @@ section {
     h3 { font-size: 1.5rem; }
 
     /* Hero */
+    .hero {
+        padding: 100px 0 60px;
+    }
+    
     .hero-title {
         font-size: 2.5rem;
     }
@@ -727,12 +757,22 @@ section {
 }
 
 @media (max-width: 480px) {
-    .donation-amounts {
-        grid-template-columns: 1fr;
+    .hero {
+        padding: 80px 0 40px;
     }
-
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
     .hero-stats {
         grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 40px;
     }
 
     .stat {
@@ -741,6 +781,10 @@ section {
 
     .stat-number {
         font-size: 2.5rem;
+    }
+    
+    .donation-amounts {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -763,3 +807,706 @@ section {
 }
 
 /* Scroll animations would be handled by JavaScript */ 
+
+/* Job Pages Styles */
+.job-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding-top: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.job-breadcrumb {
+    margin-bottom: 20px;
+}
+
+.job-breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.job-breadcrumb a:hover {
+    color: white;
+}
+
+.job-highlights {
+    display: flex;
+    gap: 30px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.job-highlight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.job-highlight i {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.job-details-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.job-main-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.job-section {
+    margin-bottom: 40px;
+}
+
+.job-section h2 {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.job-section h3 {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.job-responsibilities {
+    list-style: none;
+    padding: 0;
+}
+
+.job-responsibilities li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    padding-left: 25px;
+}
+
+.job-responsibilities li:before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.requirements-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.requirement-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.requirement-category li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    padding-left: 20px;
+}
+
+.requirement-category li:before {
+    content: "✓";
+    color: var(--success-color);
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: var(--background-light);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background: white;
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+
+.skill-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.job-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.job-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.job-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.job-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.job-info-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.job-info-item strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.job-info-item p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.benefits-list i {
+    color: var(--success-color);
+    font-size: 1rem;
+}
+
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.step-content strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.step-content p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Careers Page Styles */
+.careers-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding-top: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.job-card {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.job-details {
+    margin: 20px 0;
+}
+
+.job-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.job-info span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.job-info i {
+    color: var(--primary-color);
+}
+
+.job-salary {
+    margin-bottom: 20px;
+}
+
+.job-salary strong {
+    color: var(--success-color);
+    font-size: 1.1rem;
+}
+
+/* Donation Page Styles */
+.donation-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding-top: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.login-card {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    max-width: 600px;
+    width: 100%;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.login-header h2 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    color: var(--text-secondary);
+}
+
+.login-options {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.login-option {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.login-option:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+.login-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.login-option:nth-child(1) .login-icon {
+    background: #4285f4;
+    color: white;
+}
+
+.login-option:nth-child(3) .login-icon {
+    background: #00a1f1;
+    color: white;
+}
+
+.login-content h3 {
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.login-content p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.login-divider {
+    text-align: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+.login-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border-color);
+}
+
+.login-divider span {
+    background: white;
+    padding: 0 20px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.login-footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.login-footer p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.login-footer i {
+    color: var(--success-color);
+    margin-right: 8px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--background-light);
+    border-radius: 15px;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.user-details h3 {
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.user-details p {
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.custom-amount {
+    margin: 30px 0;
+}
+
+.custom-amount label {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.amount-input {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 300px;
+}
+
+.currency {
+    background: var(--background-light);
+    padding: 15px 20px;
+    color: var(--text-primary);
+    font-weight: 600;
+    border-right: 1px solid var(--border-color);
+}
+
+.amount-input input {
+    flex: 1;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.amount-input input:focus {
+    background: var(--background-light);
+}
+
+.donation-frequency {
+    margin: 30px 0;
+}
+
+.donation-frequency h3 {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.frequency-options {
+    display: flex;
+    gap: 20px;
+}
+
+.frequency-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 15px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.frequency-option:hover {
+    border-color: var(--primary-color);
+}
+
+.frequency-option input[type="radio"] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.frequency-option input[type="radio"]:checked + .checkmark {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+}
+
+.frequency-option input[type="radio"]:checked + .checkmark::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+}
+
+.donation-summary {
+    background: var(--background-light);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+.donation-summary h3 {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-top: 2px solid var(--primary-color);
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.apply-cta {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.apply-note {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.contact-info {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.contact-details .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+}
+
+.contact-details .contact-item i {
+    color: var(--primary-color);
+}
+
+/* Responsive Design for New Pages */
+@media (max-width: 768px) {
+    .job-details-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .job-main-content {
+        padding: 30px 20px;
+    }
+    
+    .requirements-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .job-highlights {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .login-card {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+    
+    .login-option {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .frequency-options {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .user-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-details {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .job-card {
+        padding: 20px 15px;
+    }
+    
+    .login-card {
+        padding: 20px 15px;
+    }
+    
+    .amount-input {
+        max-width: 100%;
+    }
+} 
+
+.vessel-image {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.15);
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+} 

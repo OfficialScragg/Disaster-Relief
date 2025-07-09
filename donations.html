@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Lifeline Global</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="ship.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-ship"></i>
+                    <span>Lifeline Global</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#services" class="nav-link">Our Work</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="donations.html" class="nav-link donate-btn">Donate Now</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero donation-hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Support Our Maritime Mission</h1>
+                <p class="hero-subtitle">
+                    Your donation directly supports our humanitarian relief vessel operations, helping us reach 
+                    coastal communities across Africa with emergency aid, medical care, and essential supplies.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Goes to Relief</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">500K+</div>
+                        <div class="stat-label">Lives Impacted</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login-section" class="about">
+        <div class="container">
+            <div class="login-container">
+                <div class="login-card">
+                    <div class="login-header">
+                        <h2>Secure Donation Portal</h2>
+                        <p>Please sign in to continue with your donation</p>
+                    </div>
+                    
+                    <div class="login-options">
+                        <div class="login-option">
+                            <div class="login-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <div class="login-content">
+                                <h3>Sign in with Google</h3>
+                                <p>Quick and secure access using your Google account</p>
+                                <button class="btn btn-primary btn-large login-btn" onclick="signInWithGoogle()">
+                                    <i class="fab fa-google"></i> Continue with Google
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="login-divider">
+                            <span>or</span>
+                        </div>
+                        
+                        <div class="login-option">
+                            <div class="login-icon">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <div class="login-content">
+                                <h3>Sign in with Microsoft</h3>
+                                <p>Secure access using your Microsoft account</p>
+                                <button class="btn btn-secondary btn-large login-btn" onclick="signInWithMicrosoft()">
+                                    <i class="fab fa-microsoft"></i> Continue with Microsoft
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="login-footer">
+                        <p><i class="fas fa-shield-alt"></i> Your information is protected with bank-level security</p>
+                        <p><i class="fas fa-lock"></i> We never store your payment information</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Form (Hidden until login) -->
+    <section id="donation-section" class="donation" style="display: none;">
+        <div class="container">
+            <div class="donation-content">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <h3 id="user-name">Welcome back!</h3>
+                        <p id="user-email">Thank you for supporting our mission</p>
+                        <button class="btn btn-outline btn-small" onclick="signOut()">
+                            <i class="fas fa-sign-out-alt"></i> Sign Out
+                        </button>
+                    </div>
+                </div>
+
+                <h2>Choose Your Donation Amount</h2>
+                <p>Every dollar makes a difference in our mission to help coastal communities</p>
+                
+                <div class="donation-amounts">
+                    <div class="amount-card" onclick="selectAmount(50)">
+                        <div class="amount">$50</div>
+                        <p>Emergency food supplies for a coastal family</p>
+                    </div>
+                    <div class="amount-card" onclick="selectAmount(100)">
+                        <div class="amount">$100</div>
+                        <p>Medical supplies for our onboard clinic for one day</p>
+                    </div>
+                    <div class="amount-card" onclick="selectAmount(250)">
+                        <div class="amount">$250</div>
+                        <p>Fuel for one day of coastal patrol operations</p>
+                    </div>
+                    <div class="amount-card" onclick="selectAmount(500)">
+                        <div class="amount">$500</div>
+                        <p>Complete emergency response mission to one community</p>
+                    </div>
+                </div>
+
+                <div class="custom-amount">
+                    <label for="custom-amount">Or enter a custom amount:</label>
+                    <div class="amount-input">
+                        <span class="currency">$</span>
+                        <input type="number" id="custom-amount" placeholder="Enter amount" min="1" step="1">
+                    </div>
+                </div>
+
+                <div class="donation-frequency">
+                    <h3>Donation Frequency</h3>
+                    <div class="frequency-options">
+                        <label class="frequency-option">
+                            <input type="radio" name="frequency" value="one-time" checked>
+                            <span class="checkmark"></span>
+                            One-time donation
+                        </label>
+                        <label class="frequency-option">
+                            <input type="radio" name="frequency" value="monthly">
+                            <span class="checkmark"></span>
+                            Monthly recurring
+                        </label>
+                    </div>
+                </div>
+
+                <div class="donation-summary">
+                    <h3>Donation Summary</h3>
+                    <div class="summary-item">
+                        <span>Amount:</span>
+                        <span id="summary-amount">$0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Frequency:</span>
+                        <span id="summary-frequency">One-time</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="summary-total">$0</span>
+                    </div>
+                </div>
+
+                <div class="donation-buttons">
+                    <button class="btn btn-primary btn-large" onclick="processDonation()">
+                        <i class="fas fa-heart"></i> Complete Donation
+                    </button>
+                </div>
+
+                <p class="donation-note">
+                    <i class="fas fa-info-circle"></i>
+                    100% of donations go directly to our maritime relief operations. 
+                    Administrative costs are covered by separate funding.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Impact</h2>
+                <p>See how your donations make a real difference in coastal communities</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Food Security</h3>
+                    <p>Your donations provide emergency food supplies to families affected by disasters and food insecurity.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-medkit"></i>
+                    </div>
+                    <h3>Medical Care</h3>
+                    <p>Support our onboard medical clinic providing emergency healthcare to coastal communities.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Emergency Shelter</h3>
+                    <p>Help provide temporary shelter and reconstruction support for disaster-affected families.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>Vessel Operations</h3>
+                    <p>Keep our humanitarian relief vessel operational and ready to respond to emergencies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-ship"></i>
+                        <span>Lifeline Global</span>
+                    </div>
+                    <p>Bringing hope and relief to coastal communities across Africa through maritime operations.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Our Work</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="donations.html">Donate</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="careers.html">Join Our Crew</a></li>
+                        <li><a href="#">Partner with Us</a></li>
+                        <li><a href="#">Corporate Sponsorship</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Transparency</h4>
+                    <ul>
+                        <li><a href="#">Annual Reports</a></li>
+                        <li><a href="#">Financial Statements</a></li>
+                        <li><a href="#">Impact Stories</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Lifeline Global. All rights reserved. | Registered Charity No. 12345-6789</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Donation page specific JavaScript
+        let selectedAmount = 0;
+        let isLoggedIn = false;
+
+        function signInWithGoogle() {
+            // Simulate Google sign-in
+            isLoggedIn = true;
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('donation-section').style.display = 'block';
+            document.getElementById('user-name').textContent = 'John Doe';
+            document.getElementById('user-email').textContent = 'john.doe@gmail.com';
+        }
+
+        function signInWithMicrosoft() {
+            // Simulate Microsoft sign-in
+            isLoggedIn = true;
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('donation-section').style.display = 'block';
+            document.getElementById('user-name').textContent = 'Jane Smith';
+            document.getElementById('user-email').textContent = 'jane.smith@outlook.com';
+        }
+
+        function signOut() {
+            isLoggedIn = false;
+            document.getElementById('login-section').style.display = 'block';
+            document.getElementById('donation-section').style.display = 'none';
+            selectedAmount = 0;
+            updateSummary();
+        }
+
+        function selectAmount(amount) {
+            selectedAmount = amount;
+            document.getElementById('custom-amount').value = amount;
+            updateSummary();
+            
+            // Update visual selection
+            document.querySelectorAll('.amount-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+        }
+
+        function updateSummary() {
+            const frequency = document.querySelector('input[name="frequency"]:checked').value;
+            const frequencyText = frequency === 'monthly' ? 'Monthly' : 'One-time';
+            
+            document.getElementById('summary-amount').textContent = `$${selectedAmount}`;
+            document.getElementById('summary-frequency').textContent = frequencyText;
+            document.getElementById('summary-total').textContent = `$${selectedAmount}`;
+        }
+
+        function processDonation() {
+            if (selectedAmount <= 0) {
+                alert('Please select a donation amount');
+                return;
+            }
+            
+            const frequency = document.querySelector('input[name="frequency"]:checked').value;
+            alert(`Thank you for your ${frequency} donation of $${selectedAmount}! Your contribution will help us continue our mission.`);
+        }
+
+        // Event listeners
+        document.getElementById('custom-amount').addEventListener('input', function() {
+            selectedAmount = parseInt(this.value) || 0;
+            updateSummary();
+            
+            // Remove selection from amount cards
+            document.querySelectorAll('.amount-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+        });
+
+        document.querySelectorAll('input[name="frequency"]').forEach(radio => {
+            radio.addEventListener('change', updateSummary);
+        });
+    </script>
+</body>
+</html> 
